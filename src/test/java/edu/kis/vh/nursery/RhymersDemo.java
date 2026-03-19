@@ -9,17 +9,18 @@ class RhymersDemo {
 
     public static void main(String[] args) {
         Rhymersfactory factory = new DefaultRhymersFactory();
-        
+        int num = 15;
+        int count = 3;
         defaultCountingOutRhymer[] rhymers = { factory.GetStandardRhymer(), factory.GetFalseRhymer(),
                 factory.GetFIFORhymer(), factory.GetHanoiRhymer()};
         
-        for (int i = 1; i < 15; i++)
-            for (int j = 0; j < 3; j++)
+        for (int i = 1; i < num; i++)
+            for (int j = 0; j < count; j++)
                 rhymers[j].countIn(i);
         
         java.util.Random rn = new java.util.Random();
-        for (int i = 1; i < 15; i++)
-            rhymers[3].countIn(rn.nextInt(20));
+        for (int i = 1; i < num; i++)
+            rhymers[count].countIn(rn.nextInt(20));
         
         for (int i = 0; i < rhymers.length; i++) {
             while (!rhymers[i].callCheck())
@@ -28,7 +29,7 @@ class RhymersDemo {
         }
         
         System.out.println("total rejected is "
-                + ((HanoiRhymer) rhymers[3]).reportRejected());
+                + ((HanoiRhymer) rhymers[count]).reportRejected());
         
     }
     
