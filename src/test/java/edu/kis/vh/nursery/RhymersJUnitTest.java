@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class RhymersJUnitTest {
-
+    //kod jest poprawny i przechodzi testy jednostkowe
     public static final int TEST_VALUE = 4;
     public static final int STACK_CAPACITY = 12;
     public static final int EMPTY_STACK_VALUE = -1;
