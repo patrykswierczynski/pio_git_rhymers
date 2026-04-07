@@ -1,6 +1,6 @@
 package edu.kis.vh.nursery;
 
-import edu.kis.vh.nursery.factory.DefaultRhymersFactory;
+
 import edu.kis.vh.nursery.factory.Rhymersfactory;
 
 class RhymersDemo {
@@ -34,5 +34,27 @@ class RhymersDemo {
         System.out.println("total rejected is "
                 + ((HanoiRhymer) rhymers[INT1]).reportRejected());
     }
+     static class DefaultRhymersFactory implements Rhymersfactory {
 
+        @Override
+        public DefaultCountingOutRhymer getStandardRhymer() {
+            return new DefaultCountingOutRhymer();
+        }
+
+        @Override
+        public DefaultCountingOutRhymer getFalseRhymer() {
+            return new DefaultCountingOutRhymer();
+        }
+
+        @Override
+        public DefaultCountingOutRhymer getFIFORhymer() {
+            return new FIFORhymer();
+        }
+
+        @Override
+        public DefaultCountingOutRhymer getHanoiRhymer() {
+            return new HanoiRhymer();
+        }
+
+    }
 }
